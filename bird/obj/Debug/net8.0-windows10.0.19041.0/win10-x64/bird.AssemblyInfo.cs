@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("bird")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+ac19800d3f7f9681c9d2929f71bdec32999f2d26")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+77fe4dc432f22463610cfa7702e2ca9e52729b48")]
 [assembly: System.Reflection.AssemblyProductAttribute("bird")]
 [assembly: System.Reflection.AssemblyTitleAttribute("bird")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
