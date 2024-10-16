@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="bird.GamePage"
+             Shell.NavBarIsVisible="False">
+
+
+
+       <Grid>
+       <Grid.GestureRecognizers>
+       <TapGestureRecognizer Tapped="Ui"/>
+       </Grid.GestureRecognizers>
+              <Image Source="estabulo.png"
+                     x:Name="Fundo"
+                     Aspect="Fill"/>
+
+              <Image Source="horsefly.png"
+                     x:Name="Passaro"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Start"
+                     HeightRequest="70"/>
+
+              <Image Source="fenoo.png"
+                     x:Name="fenoCima"
+                     HorizontalOptions="End"
+                     HeightRequest="350"
+                     VerticalOptions="Start"/>
+
+
+              <Image Source="fenooo.png"
+                     x:Name="fenoBaixo"
+                     HorizontalOptions="End"
+                     HeightRequest="350"
+                     VerticalOptions="End"/>
+
+              <Image Source="cavalochao.png"
+                     x:Name="Chao"
+                     HeightRequest="70"
+                     Aspect="AspectFill"
+                     VerticalOptions="End"/>
+
+
+
+              <Frame x:Name="GameOverFrame"
+                     BackgroundColor="#99000000"
+                     HorizontalOptions="Fill"
+                     VerticalOptions="Fill"
+                     CornerRadius="0">
+
+                     <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Ai"/>
+                     </Frame.GestureRecognizers>
+
+                     <Image Source="gameoverhorse.png"/>
+
+              </Frame>
+
+
+       </Grid>
+
+</ContentPage>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aluno\\bird-1\\bird\\bird.csproj": {}
+    "C:\\Users\\Aluno\\bird\\bird\\bird.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aluno\\bird-1\\bird\\bird.csproj": {
+    "C:\\Users\\Aluno\\bird\\bird\\bird.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aluno\\bird-1\\bird\\bird.csproj",
+        "projectUniqueName": "C:\\Users\\Aluno\\bird\\bird\\bird.csproj",
         "projectName": "bird",
-        "projectPath": "C:\\Users\\Aluno\\bird-1\\bird\\bird.csproj",
+        "projectPath": "C:\\Users\\Aluno\\bird\\bird\\bird.csproj",
         "packagesPath": "C:\\Users\\Aluno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aluno\\bird-1\\bird\\obj\\",
+        "outputPath": "C:\\Users\\Aluno\\bird\\bird\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
