@@ -16,7 +16,7 @@ public partial class GamePage : ContentPage
 	const int maxJumpTime = 3;
 	bool IsJumping = false;
 	int JumpTime = 0;
-	const int minOpening = 200;
+	const int minOpening = 100;
 	int score = 0;
 
 	// Ai
