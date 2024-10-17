@@ -16,8 +16,8 @@ public partial class GamePage : ContentPage
 	const int maxJumpTime = 3;
 	bool IsJumping = false;
 	int JumpTime = 0;
-	
-
+	const int minOpening = 200;
+	int score = 0;
 
 	// Ai
 
@@ -115,14 +115,20 @@ public partial class GamePage : ContentPage
 		fenoBaixo.TranslationX -= Velocity;
 		fenoCima.TranslationX -= Velocity;
 
+
 		if (fenoBaixo.TranslationX < -WidthtWindow)
 		{
 			fenoBaixo.TranslationX = 0;
 			fenoCima.TranslationX = 0;
-            var HeightMax = -100;
-            var HeightMin = -fenoBaixo.HeightRequest;
+			var MaxHeight = -100;
+			var MinHeight = -fenoBaixo.HeightRequest;
+			fenoCima.TranslationY = Random.Shared.Next((int)MinHeight, (int)MaxHeight);
+			fenoBaixo.TranslationY = fenoCima.TranslationY + minOpening + fenoBaixo.HeightRequest;
+			score++;
+			LabelScore.Text = "Canos:" + score.ToString("D3");
 		}
 	}
+
 
 
 

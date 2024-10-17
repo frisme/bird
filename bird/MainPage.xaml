@@ -2,20 +2,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="bird.MainPage"
-             Shell.NavBarIsVisible="False"
-             >
+             Shell.NavBarIsVisible="False">
 
     <Grid>
 
         <Image Source="estabulo.png"
                Aspect="Fill"/>
 
-        <Label Text="Jump Bird"
+        <Label Text="Horse Fly"
             FontFamily="arcade.ttf"
             FontSize="50"
             HorizontalOptions="Center"
             VerticalOptions="Center"
-            TextColor="White"/>
+            TextColor="Black"/>
 
         <Button Text="Iniciar"
                 HeightRequest="60"
@@ -25,7 +24,7 @@
                 HorizontalOptions="Center"
                 BackgroundColor="LightGray"
                 Margin="20"
-                TextColor="White"/>
+                TextColor="Black"/>
 
     </Grid>
 
