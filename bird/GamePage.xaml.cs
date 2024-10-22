@@ -64,10 +64,46 @@ public partial class GamePage : ContentPage
 		}
 	}
 
+	bool VerifyColisionCanoCima()
+	{
+		var posHPassaro = (HeightWindow/2) - (ImgPassaro.WidthRequest/2);
+		var posVPassaro = (HeightWindow/2) - (ImgPassaro.HeightRequest/2) + dmgPassaro.TranslationY;
+		if(posHPassaro >= Math.Abs(ImgCanoCima.TranslationX) - ImgCanoCima.WidthRequest &&
+		   posHPassaro <= Math.Abs(ImgCanoCima.TranslationX) + ImgCanoCima.WidthRequest &&
+		   posVPassaro <= ImgCanoCima.HeightRequest + ImgPassaro.TranslationY)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+
+	}
+
+	bool VerifyColisionF()
+	{
+		if (VerifyColisionT() ||
+			VerifyColisionC() ||
+			VerifyColisionCanoCima() )
+		  return true;
+		else
+		  return false;
+	}
+
 	void ApplyGravity()
 	{
 		Passaro.TranslationY += Gravity;
 		
+	}
+
+	void Inicializar()
+	{
+		ImgCanoCima.TranslationX = - larguraJanela;
+		ImgCanoBaixo.TranslationY = - larguraJanela;
+		ImgPassaro.TranslationX = 0;
+		ImgPassaro.TranslationY = 0;
+		score = 0;
 	}
 	void ApplyJump()
 	{
