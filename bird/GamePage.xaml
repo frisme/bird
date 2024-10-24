@@ -17,7 +17,7 @@
               <Image Source="horsefly.png"
                      x:Name="Passaro"
                      VerticalOptions="Center"
-                     HorizontalOptions="Start"
+                     HorizontalOptions="Center"
                      HeightRequest="70"/>
 
               <Image Source="fenoo.png"

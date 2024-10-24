@@ -87,26 +87,22 @@ public partial class GamePage : ContentPage
 
 	bool VerifyColisionCanoBaixo()
 	{
-		var posHPassaro = (WidthtWindow/2) - (Passaro.WidthRequest/2);
-		var posVPassaro = (HeightWindow/2) - (Passaro.HeightRequest/2) + Passaro.TranslationY;
-		var yMaxCano = fenoBaixo.HeightRequest + fenoBaixo.TranslationY + minOpening;
-		if(posHPassaro >= Math.Abs(fenoBaixo.TranslationX) - fenoBaixo.WidthRequest &&
-		   posHPassaro <= Math.Abs(fenoBaixo.TranslationX) + fenoBaixo.WidthRequest &&
-		   posVPassaro <= fenoBaixo.HeightRequest + fenoBaixo.TranslationY)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		//Posição horizontal
+		var posicaoHPardal = (WidthtWindow / 2) - (Passaro.WidthRequest / 2);
+		//Posição vertical
+		var posicaoVPardal = (WidthtWindow / 2) - (Passaro.HeightRequest / 2) + Passaro.TranslationY;
 
+		if (posicaoHPardal >= Math.Abs(fenoBaixo.TranslationX) + fenoBaixo.WidthRequest && 
+		posicaoHPardal <= Math.Abs(fenoBaixo.TranslationX) + fenoBaixo.WidthRequest && 
+		posicaoVPardal <= fenoBaixo.HeightRequest + fenoBaixo.TranslationY)
+			return true;
+		else
+			return false;
 	}
 
 	void ApplyGravity()
 	{
 		Passaro.TranslationY += Gravity;
-		
 	}
 	void ApplyJump()
 	{
@@ -153,7 +149,6 @@ public partial class GamePage : ContentPage
 	{
 		fenoBaixo.TranslationX -= Velocity;
 		fenoCima.TranslationX -= Velocity;
-
 
 		if (fenoBaixo.TranslationX < -WidthtWindow)
 		{
