@@ -69,12 +69,11 @@ public partial class GamePage : ContentPage
 
 	bool VerifyColisionCanoCima()
 	{
-		var posHPassaro = (WidthtWindow/2) - (Passaro.WidthRequest/2);
-		var posVPassaro = (HeightWindow/2) - (Passaro.HeightRequest/2) + Passaro.TranslationY;
-		var yMaxCano = fenoCima.HeightRequest + fenoCima.TranslationY + minOpening;
-		if(posHPassaro >= Math.Abs(fenoCima.TranslationX) - fenoCima.WidthRequest &&
-		   posHPassaro >= Math.Abs(fenoCima.TranslationX) + fenoCima.WidthRequest &&
-		   posVPassaro <= fenoCima.HeightRequest + fenoCima.TranslationY)
+		var posHPassaro = (WidthtWindow / 2) - (Passaro.WidthRequest / 2);
+		var posVPassaro = (HeightWindow / 2) - (Passaro.HeightRequest / 2) + Passaro.TranslationY;
+		if (posHPassaro >= Math.Abs(fenoCima.TranslationX) - fenoCima.WidthRequest &&
+		posHPassaro >= Math.Abs(fenoCima.TranslationX) + fenoCima.WidthRequest &&
+		posVPassaro <= fenoCima.HeightRequest + fenoCima.TranslationY)
 		{
 			return true;
 		}
@@ -82,22 +81,23 @@ public partial class GamePage : ContentPage
 		{
 			return false;
 		}
-
 	}
 
 	bool VerifyColisionCanoBaixo()
 	{
-		//Posição horizontal
-		var posicaoHPardal = (WidthtWindow / 2) - (Passaro.WidthRequest / 2);
-		//Posição vertical
-		var posicaoVPardal = (WidthtWindow / 2) - (Passaro.HeightRequest / 2) + Passaro.TranslationY;
-
-		if (posicaoHPardal >= Math.Abs(fenoBaixo.TranslationX) + fenoBaixo.WidthRequest && 
-		posicaoHPardal <= Math.Abs(fenoBaixo.TranslationX) + fenoBaixo.WidthRequest && 
-		posicaoVPardal <= fenoBaixo.HeightRequest + fenoBaixo.TranslationY)
+		var posHPassaro = (WidthtWindow / 2) - (Passaro.WidthRequest / 2);
+		var posVPassaro = (HeightWindow / 2) - (Passaro.HeightRequest / 2) + Passaro.TranslationY;
+		var yMaxCano = fenoCima.HeightRequest + fenoCima.TranslationY + minOpening;
+		if (posHPassaro >= Math.Abs(fenoBaixo.TranslationX) - fenoBaixo.WidthRequest &&
+		 posHPassaro <= Math.Abs(fenoBaixo.TranslationX) + fenoBaixo.WidthRequest &&
+		 posVPassaro >= yMaxCano)
+		{
 			return true;
+		}
 		else
+		{
 			return false;
+		}
 	}
 
 	void ApplyGravity()
@@ -117,27 +117,37 @@ public partial class GamePage : ContentPage
 
 	public async void Desenha()
 	{
+		Passaro.Source = "horsefly.png";
+
+
+		score = 0;
 		while (!IsDied)
 		{
 			if (IsJumping)
 			{
 				ApplyJump();
 			}
-			else 
+			else
 			{
 				ApplyGravity();
 			}
 			ApplyGravity();
 			ManageTower();
+
 			if (VerifyColision())
 			{
 				IsDied = true;
+				Passaro.Source = "explosao.png";
+				LabelGameOver.Text = $"Você passou por \n{score} \nprédios";
+				scoreL.Text = "Prédios : " + score.ToString("D3");
 				GameOverFrame.IsVisible = true;
+				Inicializar();
 				break;
 			}
 			await Task.Delay(TimeBeteweenFrames);
 		}
 	}
+	
 	protected override void OnSizeAllocated(double width, double height)
 	{
 		base.OnSizeAllocated(width, height);
